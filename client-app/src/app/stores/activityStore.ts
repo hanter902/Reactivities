@@ -13,7 +13,6 @@ class ActivityStore {
   @observable target = "";
 
   @computed get activitiesByDate() {
-    console.log(this.activityRegistry.values())
     return this.groupActivitiesByDate(
       Array.from(this.activityRegistry.values())
     );
@@ -25,7 +24,7 @@ class ActivityStore {
     );
     return Object.entries(
       sortedActivities.reduce((activities, activity) => {
-    
+
         const date = activity.date.split("T")[0];
 
         activities[date] = activities[date]
